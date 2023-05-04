@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+  
+{% block title %}Add New Bank Records{% endblock title %}
+  
+{% block content %}
+<div class="col-md-12">    
+    <form method="POST" class="post-form" action="http://localhost:8000/adminpanel/addnew/">  
+    {% csrf_token %}  
+    <div class="container">  
+        <div class="col-12">  
+        <h3>Enter Details</h3>  
+        </div>    
+     
+        <div class="mb-3"> 
+            <label>Bank Name:</label>  
+            {{ form.name }}   
+        </div> 
+
+        <div class="mb-3"> 
+            <label>Interest Personal Loan</label>  
+            {{ form.interest_pl }}     
+        </div> 
+        
+        <div class="mb-3"> 
+            <label>Interest Business Loan</label>  
+            {{ form.interest_bl }}     
+        </div>
+
+        <div class="mb-3"> 
+            <label>Interest Home Loan</label>  
+            {{ form.interest_hl }}     
+        </div>
+
+        <div class="mb-3"> 
+            <label>Interest Education Loan</label>  
+            {{ form.interest_el }}     
+        </div>
+
+        <div class="mb-3"> 
+            <label>Interest Vehicle Loan</label>  
+            {{ form.interest_vl }}     
+        </div>
+
+        <div class="mb-3"> 
+            <label>Principal of Personal Loan</label>  
+            {{ form.principal_pl }}     
+        </div> 
+        
+        <div class="mb-3"> 
+            <label>principal of Business Loan</label>  
+            {{ form.principal_bl }}     
+        </div>
+
+        <div class="mb-3"> 
+            <label>principal of Home Loan</label>  
+            {{ form.principal_hl }}     
+        </div>
+
+        <div class="mb-3"> 
+            <label>principal of Education Loan</label>  
+            {{ form.principal_el }}     
+        </div>
+
+        <div class="mb-3"> 
+            <label>principal of Vehicle Loan</label>  
+            {{ form.principal_vl }}     
+        </div>
+
+        <div class="mb-3"> 
+            <label>Duration of Personal Loan</label>  
+            {{ form.time_pl }}     
+        </div> 
+        
+        <div class="mb-3"> 
+            <label>Duration of Business Loan</label>  
+            {{ form.time_bl }}     
+        </div>
+
+        <div class="mb-3"> 
+            <label>Duration of Home Loan</label>  
+            {{ form.time_hl }}     
+        </div>
+
+        <div class="mb-3"> 
+            <label>Duration of Education Loan</label>  
+            {{ form.time_el }}     
+        </div>
+
+        <div class="mb-3"> 
+            <label>Duration of Vehicle Loan</label>  
+            {{ form.time_vl }}     
+        </div>
+        
+        <div class="mb-3"> 
+            <button type="submit" class="btn btn-primary">Submit</button>    
+        </div> 
+    </div>  
+    </form>  
+</div> 
+{% endblock content %}

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EMI CALCULATOR</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous" />
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css" />
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+            crossorigin="anonymous" />
+        <style>
+            header {
+                background-color: #333;
+                color: #fff;
+                font-size: large;
+            }
+
+            nav {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            nav ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px;
+                background-color: #333;
+            }
+
+
+            nav ul li a {
+                color: #fff;
+                text-decoration: none;
+                padding: 5px 10px;
+                border: 1px solid #fff;
+                border-radius: 5px;
+            }
+
+            nav ul li a:hover {
+                background-color: #fff;
+                color: #333;
+            }
+
+            footer {
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 10px;
+            }
+
+            .loan-calculator {
+                font-family: "Roboto", sans-serif;
+                width: 900px;
+                margin: 24px auto;
+                background: white;
+                box-shadow: 0 12px 50px -11px rgb((red), green, blue)(0, 0, 0, 0, 2);
+                border-radius: 8px;
+                color: #333;
+                overflow: hidden;
+            }
+
+            .loan-calculator,
+            .loan-calculator * {
+                box-sizing: border-box;
+            }
+
+            .loan-calculator .top {
+                background: #333;
+                color: white;
+                padding: 32px;
+            }
+
+            .loan-calculator .top h2 {
+                margin-top: 0;
+            }
+
+            .loan-calculator form {
+                display: flex;
+                gap: 8px;
+                justify-content: space-between;
+            }
+
+            .loan-calculator .title {
+                margin-bottom: 16px;
+            }
+
+            .loan-calculator form input {
+                font-size: 20px;
+                padding: 8px, 24px;
+                width: 100%;
+
+            }
+
+            .loan-calculator .result {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .loan-calculator .result .left {
+                width: 100%;
+                padding: 8px 32px;
+
+            }
+
+            .loan-calculator .left h3 {
+                font-size: 16px;
+                font-weight: 400;
+                margin-bottom: 8px;
+            }
+
+            .loan-calculator .result .value {
+                font-size: 30px;
+                font-weight: 900;
+                padding-bottom: 10px;
+                border-bottom: 1px solid rgba(20, 33, 61, 0.2);
+            }
+
+            .loan-calculator .result .values::before {
+                content: "$";
+                font-size: 24px;
+                font-weight: 400;
+                margin-right: 6px;
+                opacity: 0.4;
+            }
+
+            .loan-calculator .calculate-btn {
+                background-color: red;
+                color: white;
+                border: none;
+                padding: 8px 32px;
+                border-radius: 8px;
+                font-size: 18px;
+                font-weight: 900;
+                cursor: pointer;
+                margin: 24px 0;
+            }
+
+            #value {
+                font-size: 30px;
+                font-weight: 900;
+                padding-bottom: 10px;
+                border-bottom: 1px solid rgba(20, 33, 61, 0.2);
+
+            }
+
+            #value1 {
+                font-size: 30px;
+                font-weight: 900;
+                padding-bottom: 10px;
+                border-bottom: 1px solid rgba(20, 33, 61, 0.2);
+
+            }
+
+            #value2 {
+                font-size: 30px;
+                font-weight: 900;
+                padding-bottom: 10px;
+                border-bottom: 1px solid rgba(20, 33, 61, 0.2);
+
+            }
+
+            #calculate_op {
+                background-color: red;
+                color: white;
+                border: none;
+                padding: 8px 32px;
+                border-radius: 8px;
+                font-size: 18px;
+                font-weight: 900;
+                cursor: pointer;
+                margin: 24px 0;
+            }
+
+            @media (max-width: 650px) {
+                .loan-calculator {
+                    width: 90%;
+                    max-width: 500px;
+
+                }
+
+                .loan-calculator form {
+                    flex-direction: column;
+                    gap: 20px;
+                }
+
+                .loan-calculator .result {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .loan-calculator.right {
+                    width: 50%;
+                }
+
+                footer {
+                    background-color: #333;
+                    color: #fff;
+                    text-align: center;
+                    padding: 10px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+                <div class="container-fluid" style="padding-left: 10">
+                    <a class="navbar-brand" href="/"> Loan Management System</a>
+                    <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ms-auto">
+                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" href="/personalloan">Personal Loan</a>
+                            <a class="nav-link" href="/businessloan">Business Loan</a>
+                            <a class="nav-link" href="/homeloan">Home Loan</a>
+                            <a class="nav-link" href="/educationloan">Education Loan</a>
+                            <a class="nav-link" href="/vehicleloan">Vehicle Loan</a>
+                            <a class="nav-link" href="emi/">EMI Calculator</a>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="nav-link" href="http://127.0.0.1:8000/login/">Login</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="loan-calculator">
+            <div class="top">
+                <h2>Loan Calculator</h2>
+                <form action="#">
+                    <div class="group">
+                        <div class="title">Amount</div>
+                        <input type="BigInt" value="20000" id="output" />
+                    </div>
+
+                    <div class="group">
+                        <div class="title">Interest Rate</div>
+                        <input step=".1" value="7.5" id="output1" />
+                    </div>
+
+                    <div class="group">
+                        <div class="title">Tenure (in months)</div>
+                        <input type="BigInt" value="120" id="output2" />
+                    </div>
+
+                </form>
+            </div>
+            <div class="result">
+                <div class="left">
+                    <div class="loan-emi">
+                        <h3>Loan EMI</h3>
+                        <div id="value">0</div>
+                    </div>
+
+                    <div class="total-interest">
+                        <h3>Total Interest Payable</h3>
+                        <div id="value1">00</div>
+                    </div>
+
+                    <div class="total-amount">
+                        <h3>Total Amount</h3>
+                        <div id="value2">00</div>
+                    </div>
+
+                    <!-- <button class = "calculate-btn">Calculate</button> -->
+                    </p>
+                    <input type="button" value="Calculate" id="calculate_op" onclick="calculate()">
+                    <p>
+
+                </div>
+                <div class="right"><canvas id='myChart' width="400" height="400"></canvas></div>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2023 Virtual Loan Agent Website. All Rights Reserved.</p>
+        </footer>
+        <script>
+            let myChart;
+            const displayChart = (intrest1, amount1) => {
+                const ctx = document.getElementById('myChart').getContext("2d");
+
+                myChart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Interest', 'Principal'],
+                        datasets: [{
+                            data: [intrest1, amount1],
+                            backgroundColor: ["#e63946", "#14213d"],
+                            borderWidth: 0,
+                        }]
+                    }
+                });
+            }
+
+            const updateChart = (intrest1, amount1) => {
+                myChart.data.datasets[0].data[0] = intrest1;
+                myChart.data.datasets[0].data[1] = amount1;
+                myChart.update();
+            }
+            function calculate() {
+                amount = document.getElementById("output").value;
+                rate = document.getElementById("output1").value;
+                time = document.getElementById("output2").value;
+
+                const interest = (amount * (rate * 0.01)) / time;
+                let emi = Math.round(amount * (rate / 1200) * (Math.pow(1 + (rate / 1200), time) / (Math.pow(1 + (rate / 1200), time) - 1)))
+                emi1 = emi.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                document.getElementById("value").innerHTML = emi1
+
+                let amountp = (time * emi);
+                let amountp1 = Math.round(amountp)
+                amountp1 = amountp1.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                document.getElementById("value2").innerHTML = amountp1
+
+                let interestp = amountp - amount
+                var Intrest = interestp
+                interestp = interestp.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                document.getElementById("value1").innerHTML = interestp
+
+                if (myChart) { updateChart(Intrest, amount); }
+                else { displayChart(Intrest, amount); }
+            }
+
+
+
+
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js"></script>
+    </body>
+
+</html>

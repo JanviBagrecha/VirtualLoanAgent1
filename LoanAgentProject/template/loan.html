@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+  
+{% block title %}Bank Loan Records{% endblock title %}
+
+{% block content %}
+{% load static %}
+    <div style="background-image: url('static/core/media/main.jpg')";>
+        {% if ln == 'pl' %}
+            <h4 style="background-image: url('static/core/media/main.jpg')";>Personal Loan</h4> 
+        {% elif ln == "bl" %}
+            <h4>Business Loan</h4>
+        {% elif ln == "hl" %}
+            <h4>Home Loan</h4>
+        {% elif ln == "el" %}
+            <h4>Education Loan</h4>
+        {% elif ln == "vl" %}
+            <h4>Vehicle Loan</h4>
+        {% endif %}
+    </div>
+    <div class="col-md-12" style="overflow-x: auto;">
+        <div class="table-responsive">
+        <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
+        <thead>
+            <th><input type="checkbox" id="checkall" /></th>
+            <th>Bank name</th>
+            <th>Interest</th>
+            <th>Max-Principal</th>
+            <th>Max-Duration</th>  
+        </thead>
+        <tbody>
+        {% if ln == 'pl' %}
+            {% for i in loanDetails %}
+                <tr>  
+                <td><input type="checkbox" class="checkthis" /></td>
+                <td>{{i.name}}</td>
+                <td>{{i.interest_pl}}</td>
+                <td>{{i.principal_pl}}</td>
+                <td>{{i.time_pl}}</td>
+                </tr>  
+            {% endfor %} 
+        {% elif ln == "bl" %}
+            {% for i in loanDetails %}
+                <tr>  
+                <td><input type="checkbox" class="checkthis" /></td>
+                <td>{{i.name}}</td>
+                <td>{{i.interest_bl}}</td>
+                <td>{{i.principal_bl}}</td>
+                <td>{{i.time_bl}}</td>
+                </tr>  
+            {% endfor %} 
+        {% elif ln == "hl" %}
+            {% for i in loanDetails %}
+                <tr>  
+                <td><input type="checkbox" class="checkthis" /></td>
+                <td>{{i.name}}</td>
+                <td>{{i.interest_hl}}</td>
+                <td>{{i.principal_hl}}</td>
+                <td>{{i.time_hl}}</td>
+                </tr>  
+            {% endfor %} 
+        {% elif ln == "el" %}
+            {% for i in loanDetails %}
+                <tr>  
+                <td><input type="checkbox" class="checkthis" /></td>
+                <td>{{i.name}}</td>
+                <td>{{i.interest_el}}</td>
+                <td>{{i.principal_el}}</td>
+                <td>{{i.time_el}}</td>
+                </tr>  
+            {% endfor %} 
+        {% elif ln == "vl" %}
+            {% for i in loanDetails %}
+                <tr>  
+                <td><input type="checkbox" class="checkthis" /></td>
+                <td>{{i.name}}</td>
+                <td>{{i.interest_vl}}</td>
+                <td>{{i.principal_vl}}</td>
+                <td>{{i.time_vl}}</td>
+                </tr>  
+            {% endfor %} 
+        {% endif %}
+        
+        </tbody>
+        </table>
+        </div>
+    </div>
+{% endblock content %}
+
+
+ 

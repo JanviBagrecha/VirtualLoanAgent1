@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <title>Signup Page</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: white;
+            }
+            .button-link{
+                background-color: #333;
+                width: 25%;
+                padding: 15px;
+                color: black;
+                border: none;
+                float: center;
+                font-size: 15px;
+            }
+            label{
+                font-size: 20px;
+            }
+            form{
+                border: 3px solid #f1f1f1;
+            }
+            input[type=email], input[type=text]{
+                width: 50%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid #333;
+                box-sizing: border-box;
+            }
+
+            .button-link:hover{
+                opacity:0.7;
+
+            }
+            .container{
+                padding: 50px;
+                background-color: white;
+            }
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+              
+            img.avatar {
+                width: 10%;
+                border-radius: 50%;
+            }  
+        </style>
+    </head>
+    <body>
+        <center><h1>Add New</h1></center>
+        <form action="" method="post">
+            {% csrf_token %}
+            {% load static %}
+            <center>
+                <div class="container">
+
+                    <label for='name'><b>Bank Name : </b></label>
+                    <input type='text' placeholder="Enter Bank name" name='name' required><br>
+
+                    <label for ='interest_pl'><b>Interest of Personal Loan :  </b></label>
+                    <input type="text" placeholder="Enter interest rate" name="interest_pl" required><br>  
+
+                    <label for ='interest_bl'><b>Interest of Business Loan :  </b></label>
+                    <input type="text" placeholder="Enter interest rate" name="interest_bl" required><br>
+
+                    <label for ='interest_hl'><b>Interest of Home Loan :  </b></label>
+                    <input type="text" placeholder="Enter interest rate" name="interest_hl" required><br>
+
+                    <label for ='interest_el'><b>Interest of Education Loan :  </b></label>
+                    <input type="text" placeholder="Enter interest rate" name="interest_el" required><br>
+
+                    <label for ='interest_vl'><b>Interest of Vehicle Loan :  </b></label>
+                    <input type="text" placeholder="Enter interest rate" name="interest_vl" required><br>
+
+                    <label for ='principal_pl'><b>Principal of Personal Loan :  </b></label>
+                    <input type="text" placeholder="Enter principal amount" name="principal_pl" required><br>  
+
+                    <label for ='principal_bl'><b>Principal of Business Loan :  </b></label>
+                    <input type="text" placeholder="Enter principal amount" name="principal_bl" required><br>
+
+                    <label for ='principal_hl'><b>Principal of Home Loan :  </b></label>
+                    <input type="text" placeholder="Enter principal amount" name="principal_hl" required><br>
+
+                    <label for ='principal_el'><b>Principal of Education Loan :  </b></label>
+                    <input type="text" placeholder="Enter principal amount" name="principal_el" required><br>
+
+                    <label for ='principal_vl'><b>Principal of Vehicle Loan :  </b></label>
+                    <input type="text" placeholder="Enter principal amount" name="principal_vl" required><br>
+
+                    <label for ='time_pl'><b>Duration of Personal Loan :  </b></label>
+                    <input type="text" placeholder="Enter time duration" name="time_pl" required><br>  
+
+                    <label for ='time_bl'><b>Duration of Business Loan :  </b></label>
+                    <input type="text" placeholder="Enter time duration" name="time_bl" required><br>
+
+                    <label for ='time_hl'><b>Duration of Home Loan :  </b></label>
+                    <input type="text" placeholder="Enter time duration" name="time_hl" required><br>
+
+                    <label for ='time_el'><b>Duration of Education Loan :  </b></label>
+                    <input type="text" placeholder="Enter time duration" name="time_el" required><br>
+
+                    <label for ='time_vl'><b>Duration of Vehicle Loan :  </b></label>
+                    <input type="text" placeholder="Enter time duration" name="time_vl" required><br>
+
+                    <br><br><a href="http://localhost:8000/adminpanel" class="button-link">
+                        Submit
+                      </a> 
+                    <!-- <button type="submit"><b>Submit</b></button><br>      -->
+                    <!-- Already have an account <a href="http://localhost:8000/login/"> Login </a> -->
+                </div>
+            </center>
+        </form>
+    </body>
+</html>
+

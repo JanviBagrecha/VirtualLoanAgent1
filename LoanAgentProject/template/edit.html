@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+  
+{% block title %}Add New Employee Records{% endblock title %}
+  
+{% block content %}
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="http://localhost:8000/adminpanel/update/{{loanDetails.id}}">  
+    {% csrf_token %}  
+    <div class="container">   
+        <div class="col-12">  
+            <h3>Update Details</h3>  
+        </div> 
+        <div class="mb-3"> 
+            <label>Bank ID:</label>  
+            <input type="text" class="form-control" name="id" id="id_id" required maxlength="20" value="{{ loanDetails.id }}"/>    
+        </div> 
+        <div class="mb-3"> 
+            <label>Bank Name:</label>  
+            <input type="text" class="form-control" name="name" id="id_name" required maxlength="100" value="{{ loanDetails.name }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Interest of Personal Loan</label>  
+            <input type="text" class="form-control" name="interest_pl" id="id_interest_pl" required maxlength="100" value="{{ loanDetails.interest_pl }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Interest of Business Loan</label>  
+            <input type="text" class="form-control" name="interest_bl" id="id_interest_bl" required maxlength="100" value="{{ loanDetails.interest_bl }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Interest of Home Loan</label>  
+            <input type="text" class="form-control" name="interest_hl" id="id_interest_hl" required maxlength="100" value="{{ loanDetails.interest_hl }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Interest of Education Loan</label>  
+            <input type="text" class="form-control" name="interest_el" id="id_interest_el" required maxlength="100" value="{{ loanDetails.interest_el }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Interest of Vehicle Loan</label>  
+            <input type="text" class="form-control" name="interest_vl" id="id_interest_vl" required maxlength="100" value="{{ loanDetails.interest_vl }}" />  
+        </div> 
+
+        <div class="mb-3"> 
+            <label>Max Principal of Personal Loan</label>  
+            <input type="text" class="form-control" name="principal_pl" id="id_principal_pl" required maxlength="100" value="{{ loanDetails.principal_pl }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Max Principal of Business Loan</label>  
+            <input type="text" class="form-control" name="principal_bl" id="id_principal_bl" required maxlength="100" value="{{ loanDetails.principal_bl }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Max Principal of Home Loan</label>  
+            <input type="text" class="form-control" name="principal_hl" id="id_principal_hl" required maxlength="100" value="{{ loanDetails.principal_hl }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Max Principal of Education Loan</label>  
+            <input type="text" class="form-control" name="principal_el" id="id_principal_el" required maxlength="100" value="{{ loanDetails.principal_el }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Max Principal of Vehicle Loan</label>  
+            <input type="text" class="form-control" name="principal_vl" id="id_principal_vl" required maxlength="100" value="{{ loanDetails.principal_vl }}" />  
+        </div> 
+
+        <div class="mb-3"> 
+            <label>Max Time of Personal Loan</label>  
+            <input type="text" class="form-control" name="time_pl" id="id_time_pl" required maxlength="100" value="{{ loanDetails.time_pl }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Max Time of Business Loan</label>  
+            <input type="text" class="form-control" name="time_bl" id="id_time_bl" required maxlength="100" value="{{ loanDetails.time_bl }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Max Time of Home Loan</label>  
+            <input type="text" class="form-control" name="time_hl" id="id_time_hl" required maxlength="100" value="{{ loanDetails.time_hl }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Max Time of Education Loan</label>  
+            <input type="text" class="form-control" name="time_el" id="id_time_el" required maxlength="100" value="{{ loanDetails.time_el }}" />  
+        </div> 
+        <div class="mb-3"> 
+            <label>Max Time of Vehicle Loan</label>  
+            <input type="text" class="form-control" name="time_vl" id="id_time_vl" required maxlength="100" value="{{ loanDetails.time_vl }}" />  
+        </div> 
+
+        <div class="mb-3"> 
+            <button type="submit" class="btn btn-success btn-lg">Update</button>  
+        </div> 
+    </div>  
+    </form>  
+{% endblock content %} 
