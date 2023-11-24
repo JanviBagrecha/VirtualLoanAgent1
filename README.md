@@ -27,7 +27,7 @@ Virtual Loan Agent is a platform designed to simplify the process of finding, co
 
 ## Setup Instructions
 To set up the Virtual Loan Agent project locally, follow these steps:
-1. Clone the repository from [repository_link].
+1. Clone the repository.
 2. Install the necessary dependencies using `pip install -r requirements.txt`.
 3. Configure the database settings in `settings.py`.
 4. Run migrations to set up the database schema: `python manage.py makemigrations` followed by `python manage.py migrate`.
