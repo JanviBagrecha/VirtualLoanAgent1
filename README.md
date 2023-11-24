@@ -10,6 +10,8 @@ Virtual Loan Agent is a platform designed to simplify the process of finding, co
 - **Database Management**: SQL is employed for efficient and effective management of the database, ensuring smooth data handling.
 - **Loan Information**: Users can access comprehensive information about available bank loans. The platform filters loan options based on interest rates, loan terms, and eligibility criteria to match user requirements.
 - **Loan Categories**: Loans are classified into categories like personal, business, home, vehicle, and student for easy navigation and specific search results.
+  ![image](https://github.com/JanviBagrecha/VirtualLoanAgent1/assets/111588269/2df60ff3-ec59-446e-b1c8-fcfb5026f183)
+
 - **Loan Calculator**: To assist users in making informed decisions, a user-friendly loan calculator is integrated. This tool allows for effortless comparisons between different loan options, empowering users to make well-informed financial decisions.
   ![image](https://github.com/JanviBagrecha/VirtualLoanAgent1/assets/111588269/cbe5a5c9-39db-4bed-8fae-170db7d37ca7)
 
