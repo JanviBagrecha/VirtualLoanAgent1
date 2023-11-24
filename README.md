@@ -1,4 +1,6 @@
 # Virtual Loan Agent
+![image](https://github.com/JanviBagrecha/VirtualLoanAgent1/assets/111588269/5bcce2bd-566b-4f87-a087-fed25961c1e1)
+
 
 ## Overview
 Virtual Loan Agent is a platform designed to simplify the process of finding, comparing, and calculating loans offered by multiple banks. This project was developed between May 2023 and June 2023 with the aim of providing users with a user-friendly interface to explore various loan options.
@@ -9,6 +11,8 @@ Virtual Loan Agent is a platform designed to simplify the process of finding, co
 - **Loan Information**: Users can access comprehensive information about available bank loans. The platform filters loan options based on interest rates, loan terms, and eligibility criteria to match user requirements.
 - **Loan Categories**: Loans are classified into categories like personal, business, home, vehicle, and student for easy navigation and specific search results.
 - **Loan Calculator**: To assist users in making informed decisions, a user-friendly loan calculator is integrated. This tool allows for effortless comparisons between different loan options, empowering users to make well-informed financial decisions.
+  ![image](https://github.com/JanviBagrecha/VirtualLoanAgent1/assets/111588269/cbe5a5c9-39db-4bed-8fae-170db7d37ca7)
+
 - **Admin Panel**: Django's admin panel is utilized, featuring a login and signup page. In the admin panel, administrators have access to the entire database containing information on all banks and their interest rates for various loan categories. Operations like create, add, update, edit, or delete can be performed here.
   ![image](https://github.com/JanviBagrecha/VirtualLoanAgent1/assets/111588269/8e591e3d-1728-4a65-83f2-563277269f17)
 
